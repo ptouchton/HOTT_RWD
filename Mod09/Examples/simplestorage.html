@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+label {
+	font-size: 12px;
+	color: #000;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: 700;
+	float: left;
+	width: 100px;
+}
+form {
+	border: 1px solid #999;
+	padding: 30px;
+	margin: 20px;
+	width: 300px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	background-color: #e4eeff;
+	box-shadow: 0px 0 10px #666;
+}
+input {
+	font-size: 12px;
+	color: #000;
+	font-family: Verdana, Geneva, sans-serif;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #666;
+	padding: 5px;
+}
+#btnSubmit {
+	background-color: #ebaf4f;
+	font-weight: 700;
+}
+#message {
+	background-color: #FFFF99;
+	border: 1px dashed #FF0000;
+	width: 300px;
+	height: 150px;
+	padding: 30px;
+	margin: 20px;
+}
+</style>
+<script src="modernizr-latest.js"></script>
+<script>
+window.onload = function () {
+    var msg = document.getElementById('message');
+
+    if (Modernizr.localstorage) {
+        if (localStorage.name || localStorage.email) {
+            msg.innerHTML = 'There are items stored in Local storage.';
+        }
+        var btn = document.getElementById('btnSave');
+        var nme = document.getElementById('txtName');
+        var email = document.getElementById('txtEmail');
+
+        btn.onclick = function () {
+            localStorage.setItem('name', nme.value);
+            localStorage.setItem('email', email.value);
+            msg.innerHTML = 'Items saved to local storage.';
+        };
+    } else {
+        msg.innerHTML = 'Local storage is not supported.';
+    }
+}
+</script>
+</head>
+<body>
+<form id="frm1">
+  <p>
+    <label for="txtName">Name:</label>
+    <input type="text" id="txtName" />
+  </p>
+  <p>
+    <label for="txtEmail">E-mail:</label>
+    <input type="text" id="txtEmail" />
+  </p>
+  <p>
+    <input type="button" id="btnSave" value="Save" />
+  </p>
+</form>
+<div id="message"> </div>
+</body>
+</html>

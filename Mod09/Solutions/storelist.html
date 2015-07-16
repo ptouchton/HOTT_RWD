@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Local Storage - 1</title>
+<style>
+label {
+	font-size: 12px;
+	color: #000;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight:700;
+	float:left;
+	width:150px;
+}
+input {
+	font-size: 12px;
+	color: #000;
+	font-family: Verdana, Geneva, sans-serif;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border:1px solid #666;
+	padding:5px;
+}
+#btnStore, #btnClear {
+	background-color: #ebaf4f;
+	font-weight:700;
+}
+#myList {
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	line-height:18px;
+}
+</style>
+<script src="js/modernizr-latest.js"></script>
+<script>
+var ul;
+window.onload = function(){
+	ul = document.getElementById('myList');
+	
+	var btnS = document.getElementById('btnStore');
+	btnS.onclick = storeItem;
+	var btnC = document.getElementById('btnClear');
+	btnC.onclick = clearItems;
+	if(Modernizr.localstorage)
+	{
+		refresh();
+	}
+	else
+	{
+		ul.innerHTML='Local storage is not supported!';
+	}
+}
+
+//Add functions here
+function storeItem()
+{
+	var input = document.getElementById("txtInput");
+
+
+	var items = localStorage.getItem('myItems');
+	if(items!=null)
+	{
+	  items = JSON.parse(items);
+	}
+	else
+	{
+	  items = [];
+	}
+	if(input.value.trim()!='')
+	{
+		items.push(input.value);
+	}
+	localStorage.setItem('myItems', JSON.stringify(items));  
+	input.value = '';
+	refresh();
+}
+function refresh()
+{
+	var items = localStorage.getItem('myItems');
+	
+	ul.innerHTML = '';
+	
+	if(items!=null)
+	{
+		items = JSON.parse(items);
+
+		for(i in items)
+		{
+			var li = document.createElement('li');
+			var t = document.createTextNode(items[i]);
+			li.appendChild(t);
+			ul.appendChild(li);
+		}
+	}
+	
+
+}
+function clearItems ()
+{ 
+
+	ul.innerHTML='';
+	
+	localStorage.removeItem('myItems');
+	
+} 
+
+
+</script>
+</head>
+<body>
+<form id="frm1">
+  <p>
+    <label for="txtInput">Enter item to store:</label>
+    <input type="text" id="txtInput" />
+  </p>
+  <p>
+    <input type="button" id="btnStore" value="Store" />
+    <input type="button" id="btnClear" value="Clear" />
+  </p>
+</form>
+<div>
+  <ul id="myList">
+  </ul>
+</div>
+</body>
+</html>

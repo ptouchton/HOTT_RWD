@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Patterns</title>
+<style>
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-size: 100%;
+}
+.container {
+	width: 80%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 1.25em;
+	background:#F0F0F0;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:5px;
+	width:auto;
+}
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: .875em;
+}
+label {
+	display:block;
+	font-weight: 700;
+	text-align: left;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+.column {
+	float: left;
+	width:15%;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Single-Column Layout</h1>
+  <p>
+    <label for="Name">Name:</label>
+    <input type="text" id="txtName" />
+  </p>
+  <p>
+    <label for="E-mail">E-mail:</label>
+    <input type="text" id="txtEmail" />
+  </p>
+  <p>
+    <label for="Comments">Comments:</label>
+    <textarea id="Comments"></textarea>
+  </p>
+  <h1>Multi-Column Layout</h1>
+  <div class="column">
+    <p>
+      <label for="FirstName">First Name:</label>
+      <input type="text" id="txtFName" />
+    </p>
+    <p>
+      <label for="LastName">Last Name:</label>
+      <input type="text" id="txtLName" />
+    </p>
+  </div>
+  <div class="column">
+    <p>
+      <label for="E-mail">E-mail:</label>
+      <input type="text" id="txtEmail" />
+    </p>
+    <p>
+      <label for="Phone">Phone:</label>
+      <input type="text" id="txtPhone" />
+    </p>
+  </div>
+  <div class="column">
+    <p>
+      <label for="Comments" class="top">Comments:</label>
+      <textarea id="Comments"></textarea>
+    </p>
+  </div>
+</div>
+</body>
+</html>

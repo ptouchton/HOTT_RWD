@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Page Visibility API</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/visibility.css" rel="stylesheet">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/favicon.js"></script>
+<script>
+$(document).ready(function () {
+	sessionStorage.isPaused = "false";
+	var $video = $("#video1");
+	var vElement = $video.get(0);
+	var hidden, visibilityChangeEvent;
+	
+	if (typeof document.hidden !== "undefined") {
+    	hidden = "hidden";
+    	visibilityChangeEvent = "visibilitychange";
+	}
+	else if (typeof document.mozHidden !== "undefined") {
+    	hidden = "mozHidden";
+    	visibilityChangeEvent = "mozvisibilitychange";
+	}
+	else if (typeof document.msHidden !== "undefined") {
+    	hidden = "msHidden";
+    	visibilityChange = "msvisibilitychange";
+	}
+	else if (typeof document.webkitHidden !== "undefined") {
+    	hidden = "webkitHidden";
+    	visibilityChangeEvent = "webkitvisibilitychange";
+	}
+
+	function handleVisibilityChange(){
+    	if (document[hidden]) {
+        	vElement.pause();
+    	}
+    	else if (sessionStorage.isPaused !== "true") {
+        	vElement.play();
+    	}
+	}
+
+	if (typeof hidden === "undefined") {
+    	alert("This browser does not support the Page Visibility API.");
+	}
+	else {
+	    $(document).on(visibilityChangeEvent, handleVisibilityChange);
+	    $(window).on("unload", function(){
+	        favicon.change("images/favicon.ico");
+    	});
+
+    	$video.on("pause", function(){
+        	favicon.change("images/pause.png");
+        	if (!document[hidden]) {
+        	    sessionStorage.isPaused = "true";
+        	}
+    	});
+
+    	$video.on("play", function(){
+    	    sessionStorage.isPaused = "false";
+    	    favicon.change("images/play.png");
+    	});
+
+    	$video.on("timeupdate", function(){
+    	    document.title = Math.floor(vElement.currentTime) + " second(s)";
+    	});
+	}
+});
+</script>
+</head>
+<body>
+<div class="container">
+  <h1>Page Visibility API</h1>
+  <video id="video1" controls>
+    <source src="videos/whales.m4v" type="video/mp4">
+    <source src="videos/whales.ogv" type="video/ogg">
+     Your browser does not support the video element.
+  </video>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Store image in local storage</title>
+<style>
+h1 {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+}
+p {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+figcaption {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	font-style: italic;
+	color: #999;
+}
+</style>
+<script>
+window.onload = function () {
+    var storedData;
+    if (localStorage.storedData) {
+        storedData =
+            JSON.parse(localStorage.getItem("storedData"));
+    } else {
+        storedData = {};
+    }
+    var uimage = document.getElementById("userImage");
+    var storedDate = storedData.date;
+    var cdate = new Date();
+    // Concatenate the month and day to create a date 
+    // identifier
+    var todaysDate = (cdate.getMonth() + 1).toString() + cdate.getDate().toString();
+    // Compare date and create localStorage if it 
+    // doesn't exist or was not loaded today
+    if ((typeof (storedDate) === 'undefined') ||
+        (storedDate < todaysDate)) {
+        // Take action when the image has loaded
+        uimage.addEventListener("load", function () {
+            var imgCanvas =
+                document.createElement("canvas");
+            var imgContext = imgCanvas.getContext("2d");
+
+            // Make sure canvas is as big as the picture
+            imgCanvas.width = uimage.width;
+            imgCanvas.height = uimage.height;
+
+            // Draw image into canvas element
+            imgContext.drawImage(uimage, 0, 0,
+                uimage.width, uimage.height);
+
+            // Save image as a data URL
+            storedData.uimage =
+                imgCanvas.toDataURL("image/png");
+
+            // Set date for localStorage
+            storedData.date = cdate.getTime();
+
+            // Save as JSON in localStorage
+            try {
+                localStorage.setItem("storedData",
+                    JSON.stringify(storedData));
+            } catch (e) {
+                console.log("Storage failed: " + e);
+            }
+        }, false);
+
+        // Set initial image src    
+        uimage.setAttribute("src", "sunset.jpg");
+    } else {
+        // Use image from localStorage
+        uimage.setAttribute("src", storedData.uimage);
+    }
+};
+</script>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Store Image in Local Storage</h1>
+  </header>
+  <div>
+    <article>
+      <aside>
+        <p>The first time the page is loaded, the image is loaded from disk and then saved in localStorage.  On subsequent page loads, the image is loaded from localStorage.</p>
+        <p>On the first page load, view the source of the page and pay attention to the image tag's src attribute.  View the source again on sunsequent loads.</p>
+      </aside>
+      <figure> <img id="userImage" src="" alt="sunset cruise">
+        <figcaption>Sunset Cruise - Costa Rica</figcaption>
+      </figure>
+    </article>
+  </div>
+  <footer> </footer>
+</div>
+</body>
+</html>

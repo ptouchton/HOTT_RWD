@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Layout</title>
+<style>
+body {
+	background: #F0F0F0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+header, section, footer, aside, article, figure {
+	display: block;
+}
+h1 {
+	font-size: 16px;
+}
+.container {
+	width: 960px;
+	background: #faffc2;
+	margin: 0 auto;
+}
+header {
+	background: #c2f1ff;
+	padding: 5px;
+}
+.content {
+	padding: 10px;
+	width: 740px;
+	float: right;
+	background: #FFF;
+}
+aside {
+	float: left;
+	width: 200px;
+	background: #faffc2;
+	padding: 10px 0;
+}
+footer {
+	padding: 5px;
+	background: #c2f1ff;
+	clear: both;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Header</h1>
+  </header>
+  <aside> </aside>
+  <article class="content">
+    <section>
+      <h1>Content</h1>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non luctus leo. Etiam vitae ligula nisi. Nam quis sem eu nisl vestibulum facilisis. Mauris tristique luctus turpis. Vivamus eget diam sit amet massa imperdiet sagittis. Donec ac neque eu erat tincidunt hendrerit vitae a lectus. Nulla et dui in lorem scelerisque vulputate et commodo est. Donec elementum sit amet orci faucibus vehicula.</p>
+      <p>Suspendisse egestas massa ac justo faucibus placerat. Suspendisse elementum mauris erat, ac gravida est posuere et. Aenean et nulla sed tellus tempor venenatis. Donec sit amet laoreet mauris, sit amet eleifend nunc. Aliquam faucibus neque eu erat laoreet placerat. Integer pellentesque lacus vel lorem condimentum varius. Fusce adipiscing tempor semper. Aenean vitae adipiscing tellus, sed pellentesque tortor. Curabitur in elit hendrerit, congue ipsum nec, tincidunt tellus. Curabitur aliquet laoreet arcu bibendum vestibulum. Pellentesque commodo quam ac tempus mollis. Phasellus sed magna non velit varius lacinia. Ut commodo dolor non libero imperdiet sagittis. Phasellus sed ullamcorper lacus. Ut nec velit facilisis, sodales lectus ac, pulvinar libero. </p>
+    </section>
+  </article>
+  <footer>
+    <h1>Footer </h1>
+  </footer>
+</div>
+</body>
+</html>

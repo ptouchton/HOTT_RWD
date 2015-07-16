@@ -1,0 +1,226 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+body {
+	background-color: #FFF;
+	background-image: url(../images/bg.png);
+	background-position: top;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	font-size: 100%;
+}
+header, section, footer, aside, nav, article, figure, main {
+	display: block;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+	background: #e6e4cd;
+	padding: 15px;
+}
+a[href^="tel:"] {
+	color: inherit;
+	text-decoration: none;
+}
+@font-face {
+	font-family: exoextrabold;
+	src: url(../fonts/exo-extrabold-webfont.eot);
+	src: url(../fonts/exo-extrabold-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/exo-extrabold-webfont.woff) format('woff'), url(../fonts/exo-extrabold-webfont.ttf) format('truetype'), url(../fonts/exo-extrabold-webfont.svg#exoextrabold) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: exosemibold;
+	src: url(../fonts/exo-semibold-webfont.eot);
+	src: url(../fonts/exo-semibold-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/exo-semibold-webfont.woff) format('woff'), url(../fonts/exo-semibold-webfont.ttf) format('truetype'), url(../fonts/exo-semibold-webfont.svg#exodemibold) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+}
+/* HEADER */
+header {
+	width: 100%;
+	clear: both;
+	background: #f4f4ec;
+	overflow: auto;
+	padding: 5px;
+}
+#topleft {
+	float: left;
+	width: 50%;
+}
+#topright {
+	float: right;
+	width: 50%;
+	text-align: right;
+}
+#telnumber {
+	font-family: exosemibold;
+	font-size: 1.25em;
+	color: #666;
+}
+/* NAV */
+#navmenu {
+	background: #2c567d;
+	background: -moz-linear-gradient(top, #465439, #536e3b);
+	background: -webkit-linear-gradient(top, #465439, #536e3b);
+	background: -o-linear-gradient(top, #465439, #536e3b);
+	background: linear-gradient(to bottom, #465439, #536e3b);
+	-pie-background: linear-gradient(#465439, #536e3b);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#465439', endColorstr='#536e3b', GradientType=0 );
+	width: 100%;
+	float:left;
+	clear: both;
+	behavior: url(PIE.htc);
+}
+#nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#nav li {
+	float: left;
+}
+#nav li a {
+	display: block;
+	text-decoration: none;
+	padding: 10px;
+	font-family: exoextrabold;
+	font-size: 1em;
+	color: #FFF;
+	border-right: 1px solid #EBEEEF;
+}
+#nav li a:hover {
+	color: #5dccf6;
+}
+#menu-button {
+	display: none;
+}
+/* CONTENT */
+#content {
+	padding: 5px;
+	background: #f4f4ec;
+	width: 100%;
+	overflow: auto;
+	clear: both;
+}
+.box {
+	width: 30%;
+	float: left;
+	margin: 10px;
+	background: #e6e4cd;
+	box-shadow: inset 0 0 5px 5px #d4d1aa;
+	-webkit-box-shadow: inset 0 0 5px 5px #d4d1aa;
+	padding: 5px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	behavior: url(PIE.htc);
+}
+.box h2 {
+	font-size: 1em;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 3px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #536e3b;
+	behavior: url(PIE.htc);
+}
+/* FOOTER */
+footer {
+	width: 100%;
+	background: #a2a385;
+	clear: both;
+	margin-top: 5px;
+	overflow: auto;
+	font-family: exosemibold;
+	font-size: .875em;
+	text-align: center;
+	padding: 5px;
+}
+/* MAIN STYLES */
+h1 {
+	font-family: exosemibold;
+	font-size: 1.25em;
+	color: #2c567d;
+}
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .875em;
+}
+a:link, a:active, a:visited {
+	color: #0486ba;
+}
+a:hover {
+	color: #5dccf6;
+}
+/* MEDIA QUERIES */ 
+@media screen and (min-width: 150px) and (max-width: 480px) {
+body {
+	font-size: 80%;
+}
+.box {
+	float: none;
+	clear: both;
+	width: auto;
+}
+#topleft, #topright {
+	float: none;
+	width: auto;
+	text-align: center;
+}
+}
+@media screen and (min-width: 150px) and (max-width: 768px) {
+body {
+	font-size: 80%;
+}
+#navmenu {
+	position: relative;
+	background:none;
+}
+#menu-button {
+	width: 100px;
+	height: 25px;
+	background: url(../images/menu.png) no-repeat 10px center;
+	cursor: pointer;
+	display: block;
+	margin-top:5px;
+}
+/* main nav */
+#nav {
+	clear: both;
+	position: absolute;
+	width: 160px;
+	z-index: 10000;
+	padding: 5px;
+	background: #dde6cd;
+	border: solid 1px #183319;
+	display: none;
+}
+#nav li {
+	clear: both;
+	float: none;
+}
+#nav li a {
+	padding: 5px;
+	border-right: none;
+	color: #000;
+	border-bottom: 1px solid #b3c88e;
+}
+#nav li:last-child a {
+	border-bottom: none;
+}
+@media screen and (min-width : 768px) and (max-width : 1024px) {
+body {
+ font-size: 80%;
+}
+}

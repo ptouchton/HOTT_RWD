@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Off Canvas Navigation</title>
+<style>
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-size: 100%;
+}
+@font-face {
+	font-family: exosemibold;
+	src: url(fonts/exo-semibold-webfont.eot);
+	src: url(fonts/exo-semibold-webfont.eot?#iefix) format('embedded-opentype'), url(fonts/exo-semibold-webfont.woff) format('woff'), url(fonts/exo-semibold-webfont.ttf) format('truetype'), url(fonts/exo-semibold-webfont.svg#exodemibold) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.container {
+	width: 100%;
+	overflow:hidden;
+}
+.nav, #content {
+	-webkit-transition: .2s all ease;
+	-moz-transition: .2s all ease;
+	transition: .2s all ease;
+	width: 100%;
+}
+.menu_container {
+	clear:both;
+	overflow: hidden;
+}
+.menu_container, .nav-toggle {
+	display: none;
+}
+.nav-toggle {
+	background: url(images/navbg.png) no-repeat center center;
+	height: 24px;
+	width: 68px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	float: right;
+}
+nav {
+	width:100%;
+}
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	background: #06C;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+nav ul li {
+	display: inline-block;
+	text-align: left;
+}
+nav ul li a {
+	display: block;
+	color: #FFF;
+	font-family: exosemibold;
+	padding: 10px;
+	text-decoration:none;
+}
+nav ul li a:hover {
+	color: #FF6;
+}
+#content {
+	position: relative;
+}
+#content:before {
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: #06C;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+ @media screen and (max-width: 768px) {
+.menu_container, .nav-toggle {
+	display: block;
+}
+.nav {
+	margin-left: -100%;
+	float: left;
+}
+#content {
+	margin-left: 0;
+	float: left;
+}
+body.active .nav {
+	margin-left: 0;
+	width:50%;
+}
+body.active #content {
+	margin-right: -100%;
+	padding-left:20px;
+}
+nav ul {
+	text-align: left;
+}
+nav ul li {
+	display: block;
+}
+nav ul li a {
+	border-bottom: 1px solid #FFF;
+	color: #FFF;
+	font-family: exosemibold;
+	padding: 10px;
+	text-decoration:none;
+}
+}
+</style>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $('#menu-toggle').click(function (e) {
+		$('body').toggleClass('active');
+      });   
+    });
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="menu_container"> <a id="menu-toggle" class="nav-toggle" href="#mobile-nav"></a> </div>
+  <nav id="#mobile-nav" class="nav" role="navigation">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Directions</a></li>
+    </ul>
+  </nav>
+  <section id="content" role="main">
+    <h1>Heading 1</h1>
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante   metus, condimentum quis metus vel, posuere condimentum neque. Duis eu   pharetra nisi, at porttitor felis. Sed varius ac mi ac adipiscing. Cras   id semper orci. Etiam a purus eu est adipiscing porta ut vitae eros.   Nulla id turpis dictum, fringilla leo eu, adipiscing urna. Nam dignissim   fermentum gravida. Suspendisse potenti. Aenean scelerisque arcu non est   imperdiet, non vestibulum nunc fermentum. Phasellus at elementum neque.   Duis non dui vel dui pharetra tempus. Etiam congue auctor facilisis.   Praesent tempor nisl nec augue posuere facilisis. Sed accumsan felis vel   nibh sagittis, in dignissim est tempor. Phasellus ullamcorper arcu ac   est egestas, ac interdum libero ornare. </p>
+    <p> Nullam non risus nisl. Maecenas purus mauris, aliquam vel turpis nec,   eleifend convallis nibh. Maecenas massa enim, pulvinar sit amet volutpat   eu, pretium id nunc. Pellentesque pellentesque augue nunc, in fringilla   dui euismod imperdiet. Praesent massa massa, tincidunt quis ipsum at,   vestibulum venenatis velit. Proin lobortis auctor tortor, id varius mi   tempus fringilla. Sed accumsan lectus at ullamcorper scelerisque. Cras   sagittis egestas tristique. Pellentesque ornare vulputate ante in   volutpat. Nam mollis condimentum nisl nec adipiscing. Etiam sed suscipit   nisi, a pellentesque ante. Curabitur augue orci, iaculis nec congue   sollicitudin, varius eget est. Etiam pellentesque at eros eget   tincidunt. Proin vel metus sit amet lectus ultricies fermentum. Nulla   facilisi. Quisque ac viverra justo. </p>
+  </section>
+</div>
+</body>
+</html>

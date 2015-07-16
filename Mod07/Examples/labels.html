@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aligning Labels</title>
+<style>
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-size: 100%;
+}
+.container {
+	width: 90%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 1.25em;
+	background:#F0F0F0;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	padding:5px;
+	width:auto;
+	display:inline-block;
+}
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: .875em;
+}
+hr {
+	background-color: #FFF;
+	border: #CCC 2px dotted;
+	border-style: none none dotted;
+	color: #FFF;
+}
+label.left {
+	background-color: #CCC;
+	width: 15%;
+	font-weight: 700;
+	float: left;
+	text-align: left;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+label.right {
+	background-color: #CCC;
+	width: 15%;
+	font-weight: 700;
+	float: left;
+	text-align: right;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+label.top {
+	display:block;
+	font-weight: 700;
+	text-align: left;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Aligning Labels</h1>
+  <p>
+    <label for="Left-Aligned" class="left">Left-aligned Label:</label>
+    <input type="text" id="leftAlign" />
+  </p>
+  <hr>
+  <p>
+    <label for="Right-Aligned" class="right">Right-aligned Label:</label>
+    <input type="text" id="rightAlign" />
+  </p>
+  <hr>
+  <p>
+    <label for="Top-Aligned" class="top">Top-aligned Label:</label>
+    <input type="text" id="topAlign" />
+  </p>
+</div>
+</body>
+</html>

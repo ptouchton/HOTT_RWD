@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Fullscreen API</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/fullscreen.css" rel="stylesheet">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+	var fsEnabled = document.fullscreenEnabled || document.webkitFullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled;
+	if (fsEnabled) {
+		var $fsImage = $('#fsimg');
+	
+	    $fsImage.on('click', function () {
+	
+	        if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+	
+	            if (document.exitFullscreen) {
+	                document.exitFullscreen();
+	            }
+	            else if (document.webkitExitFullscreen) {
+	                document.webkitExitFullscreen();
+	            }
+	            else if (document.mozCancelFullScreen) {
+	                document.mozCancelFullScreen();
+	            }
+	            else if (document.msExitFullscreen) {
+	                document.msExitFullscreen();
+	            }
+	
+	        }
+	        else {
+	
+	            if (this.requestFullscreen) {
+	                this.requestFullscreen();
+	            }
+	            else if (this.webkitRequestFullscreen) {
+	                this.webkitRequestFullscreen();
+	            }
+	            else if (this.mozRequestFullScreen) {
+	                this.mozRequestFullScreen();
+	            }
+	            else if (this.msRequestFullscreen) {
+	                this.msRequestFullscreen();
+	            }
+	        }
+	    });
+	}
+});
+</script>
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>Fullscreen API</h1>
+  <figure id="fsimg">
+  <img src="images/sunflowers.jpg" alt="Sunflowers">
+  </figure>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis, nulla a pellentesque dapibus, ipsum nulla vehicula nunc, nec iaculis magna ligula eget ipsum. Mauris auctor commodo orci eget mattis. Nunc in orci ornare, euismod quam sit amet, porttitor purus. Proin mollis eu mi nec congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel lorem nibh. Duis vel lacinia elit, quis convallis nibh. Integer odio sem, sagittis vitae viverra non, lobortis id mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet porttitor nisl, sit amet sollicitudin neque. Donec dapibus cursus orci, eu porttitor leo vestibulum vel. Ut varius a metus eget facilisis. Donec non justo at ipsum elementum vulputate. Nam scelerisque, turpis at dapibus mattis, nunc ligula faucibus sapien, et luctus elit eros vel felis. Fusce egestas sed nunc a ornare. Sed lobortis elit quis ligula malesuada, id consequat diam accumsan. </p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi facilisis, nulla a pellentesque dapibus, ipsum nulla vehicula nunc, nec iaculis magna ligula eget ipsum. Mauris auctor commodo orci eget mattis. Nunc in orci ornare, euismod quam sit amet, porttitor purus. Proin mollis eu mi nec congue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel lorem nibh. Duis vel lacinia elit, quis convallis nibh. Integer odio sem, sagittis vitae viverra non, lobortis id mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sit amet porttitor nisl, sit amet sollicitudin neque. Donec dapibus cursus orci, eu porttitor leo vestibulum vel. Ut varius a metus eget facilisis. Donec non justo at ipsum elementum vulputate. Nam scelerisque, turpis at dapibus mattis, nunc ligula faucibus sapien, et luctus elit eros vel felis. Fusce egestas sed nunc a ornare. Sed lobortis elit quis ligula malesuada, id consequat diam accumsan. </p>
+</div>
+</body>
+</html>

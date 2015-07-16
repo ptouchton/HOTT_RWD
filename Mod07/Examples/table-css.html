@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Tables Using CSS</title>
+<style>
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-size: 100%;
+}
+#contacts {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:.75em
+}
+#contacts th {
+	background-color: #016299;
+	color: #FFF;
+}
+tr:nth-child(even) {
+	background-color: #DAE5EB;
+}
+#contacts td, #contacts th {
+	padding: 5px;
+	border: 1px solid #CCC;
+	text-align: left;
+}
+/* Media Queries */ 
+@media screen and (max-width: 760px){
+#contacts, #contacts th, #contacts tr, #contacts td {
+	display: block;
+}
+#contacts th {
+	/* The following hides the <th> tags */
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+#contacts tr {
+	border: 1px solid #CCC;
+}
+#contacts td {
+	border: none;
+	padding-left: 40%;
+	border-bottom: 1px solid #CCC;
+	position: relative;
+}
+#contacts td:before {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 45%;
+	white-space: nowrap;
+}
+/* -- LABEL THE DATA -- */
+#contacts td:nth-of-type(1):before {
+	content: "First Name";
+}
+#contacts td:nth-of-type(2):before {
+	content: "Last Name";
+}
+#contacts td:nth-of-type(3):before {
+	content: "City";
+}
+#contacts td:nth-of-type(4):before {
+	content: "State";
+}
+#contacts td:nth-of-type(5):before {
+	content: "Zip";
+}
+#contacts td:nth-of-type(6):before {
+	content: "E-mail";
+}
+#contacts td:nth-of-type(7):before {
+	content: "Phone";
+}
+}
+</style>
+</head>
+<body>
+<table id="contacts">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>E-mail</th>
+    <th>Phone</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>Smith</td>
+    <td>Portsmouth</td>
+    <td>NH</td>
+    <td>03801</td>
+    <td>johnsmith@gmail.com</td>
+    <td>603-555-5555</td>
+  </tr>
+  <tr>
+    <td>Bill</td>
+    <td>Harris</td>
+    <td>Manchester</td>
+    <td>NH</td>
+    <td>03104</td>
+    <td>billharris@gmail.com</td>
+    <td>603-555-5555</td>
+  </tr>
+  <tr>
+    <td>James</td>
+    <td>Martin</td>
+    <td>Boston</td>
+    <td>MA</td>
+    <td>02201</td>
+    <td>jamesmartin@gmail.com</td>
+    <td>978-555-5555</td>
+  </tr>
+  <tr>
+    <td>Paul </td>
+    <td>Jones</td>
+    <td>Springfield</td>
+    <td>MA</td>
+    <td>01111</td>
+    <td>pauljones@gmail.com</td>
+    <td>978-555-5555</td>
+  </tr>
+  <tr>
+    <td>Donald</td>
+    <td>Miller</td>
+    <td>Exeter</td>
+    <td>NH</td>
+    <td>03833</td>
+    <td>davidmiller@gmail.com</td>
+    <td>603-555-5555</td>
+  </tr>
+</table>
+</body>
+</html>

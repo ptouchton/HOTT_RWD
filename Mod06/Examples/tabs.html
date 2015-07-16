@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabs to Accordion</title>
+<style>
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-size: 100%;
+	font-family:Verdana, Geneva, sans-serif;
+}
+.container {
+	width: 80%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+p {
+  font-size:.875em;	
+}
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	width: 100%;
+}
+ul.tabs li {
+	float: left;
+	cursor:pointer;
+	padding: 10px;
+	background-color: #183319;
+	font-weight:700;
+	color:#FFF;
+	overflow: hidden;
+	position: relative;
+	margin-right:2px;
+	border-top: 1px solid #183319;
+	border-left: 1px solid #183319;
+	border-right: 1px solid #183319;
+	box-shadow:inset 0 10px 2px 2px rgba(255,255,255,.1);
+	-webkit-box-shadow:inset 0 10px 2px 2px rgba(255,255,255,.1);
+}
+.tab_last {
+	border-right: 1px solid #183319;
+}
+ul.tabs li:hover {
+	background-color: #ceecb1;
+}
+ul.tabs li.active {
+	background-color: #FFF;
+	color: #183319;
+	margin-bottom:-1px;
+	border-bottom: 1px solid #FFF;
+	display: block;
+}
+.tab_container {
+	border: 1px solid #183319;
+	clear: both;
+	float: left;
+	width: 100%;
+	background: #FFF;
+	overflow: auto;
+}
+.content {
+	padding: 5px;
+	display: none;
+}
+.tab_accordion {
+	display: none;
+}
+@media screen and (max-width: 480px) {
+body {
+	font-size: 80%;
+}
+.tabs {
+	display: none;
+}
+.tab_accordion {
+	background-color: #183319;
+	box-shadow:inset 0 10px 2px 2px rgba(255,255,255,.1);
+	-webkit-box-shadow:inset 0 10px 2px 2px rgba(255,255,255,.1);
+	color: #FFF;
+	margin: 0;
+	padding: 10px;
+	display: block;
+	cursor: pointer;
+}
+.tab_active {
+	background-color: #183319;
+}
+}
+</style>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+
+    $(".content").hide();
+    $(".content:first").show();
+
+    $("ul.tabs li").click(function () {
+        var tabActive = $(this).attr("rel");
+        $(".content").hide();
+
+        $("#" + tabActive).fadeIn();
+
+        $("ul.tabs li").removeClass("active");
+        $(this).addClass("active");
+
+        $(".tab_accordion").removeClass("tab_active");
+        $(".tab_accordion[rel^='" + tabActive + "']").addClass("tab_active");
+    });
+
+    $(".tab_accordion").click(function () {
+        var accordionActive = $(this).attr("rel");
+        $(".content").hide();
+
+        $("#" + accordionActive).fadeIn();
+
+        $(".tab_accordion").removeClass("tab_active");
+        $(this).addClass("tab_active");
+
+        $("ul.tabs li").removeClass("active");
+        $("ul.tabs li[rel^='" + accordionActive + "']").addClass("active");
+    });
+
+    $('ul.tabs li').last().addClass("tab_last");
+
+});
+</script>
+</head>
+<body>
+<div class="container">
+  <ul class="tabs">
+    <li rel="product1" class="active">Product 1</li>
+    <li rel="product2">Product 2</li>
+    <li rel="product3">Product 3</li>
+    <li rel="product4">Product 4</li>
+  </ul>
+  <div class="tab_container">
+    <h3 class="tab_active tab_accordion" rel="product1">Product 1</h3>
+    <div id="product1" class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt orci et nunc blandit vulputate. Donec porta tempor vestibulum. Nulla pellentesque nisl eros, non auctor urna suscipit nec</p>
+    </div>
+    <h3 class="tab_accordion" rel="product2">Product 2</h3>
+    <div id="product2" class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt orci et nunc blandit vulputate. Donec porta tempor vestibulum. Nulla pellentesque nisl eros, non auctor urna suscipit nec</p>
+    </div>
+    <h3 class="tab_accordion" rel="product3">Product 3</h3>
+    <div id="product3" class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt orci et nunc blandit vulputate. Donec porta tempor vestibulum. Nulla pellentesque nisl eros, non auctor urna suscipit nec</p>
+    </div>
+    <h3 class="tab_accordion" rel="product4">Product 4</h3>
+    <div id="product4" class="content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt orci et nunc blandit vulputate. Donec porta tempor vestibulum. Nulla pellentesque nisl eros, non auctor urna suscipit nec</p>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

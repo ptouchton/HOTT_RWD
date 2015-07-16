@@ -1,0 +1,5 @@
+Bear Mountain Bed and Breakfast<br>
+    1 Main Street<br>
+    Keene, NH 03431<br>
+    Phone: (800) 555-5555<br>
+    E-mail: <a href="mailto:conact@bearmntbnb.com">conact@bearmntbnb.com</a>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Level Menu</title>
+<style>
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-size: 100%;
+}
+#container {
+	width: 80%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+@font-face {
+	font-family: exosemibold;
+	src: url(fonts/exo-semibold-webfont.eot);
+	src: url(fonts/exo-semibold-webfont.eot?#iefix) format('embedded-opentype'), url(fonts/exo-semibold-webfont.woff) format('woff'), url(fonts/exo-semibold-webfont.ttf) format('truetype'), url(fonts/exo-semibold-webfont.svg#exodemibold) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+#nav {
+	text-align: center;
+	background: #06C;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+#nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+#nav li {
+	display: inline-block;
+	padding: 0 5px;
+}
+#nav li:last-child {
+	border-right: none;
+}
+#nav a {
+	display: block;
+	color: #FFF;
+	font-family: exosemibold;
+	padding: 10px;
+	text-decoration:none;
+}
+#nav a:hover {
+	color: #FF6;
+}
+@media screen and (max-width: 768px) {
+#nav {
+	float: right;
+	padding: 10px 0 0 0;
+}
+#nav ul li a {
+	padding: 5px 10px;
+}
+}
+</style>
+</head>
+<body>
+<div id="container">
+  <nav id="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Directions</a></li>
+    </ul>
+  </nav>
+  <section id="main" role="main">
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante   metus, condimentum quis metus vel, posuere condimentum neque. Duis eu   pharetra nisi, at porttitor felis. Sed varius ac mi ac adipiscing. Cras   id semper orci. Etiam a purus eu est adipiscing porta ut vitae eros.   Nulla id turpis dictum, fringilla leo eu, adipiscing urna. Nam dignissim   fermentum gravida. Suspendisse potenti. Aenean scelerisque arcu non est   imperdiet, non vestibulum nunc fermentum. Phasellus at elementum neque.   Duis non dui vel dui pharetra tempus. Etiam congue auctor facilisis.   Praesent tempor nisl nec augue posuere facilisis. Sed accumsan felis vel   nibh sagittis, in dignissim est tempor. Phasellus ullamcorper arcu ac   est egestas, ac interdum libero ornare. </p>
+    <p> Nullam non risus nisl. Maecenas purus mauris, aliquam vel turpis nec,   eleifend convallis nibh. Maecenas massa enim, pulvinar sit amet volutpat   eu, pretium id nunc. Pellentesque pellentesque augue nunc, in fringilla   dui euismod imperdiet. Praesent massa massa, tincidunt quis ipsum at,   vestibulum venenatis velit. Proin lobortis auctor tortor, id varius mi   tempus fringilla. Sed accumsan lectus at ullamcorper scelerisque. Cras   sagittis egestas tristique. Pellentesque ornare vulputate ante in   volutpat. Nam mollis condimentum nisl nec adipiscing. Etiam sed suscipit   nisi, a pellentesque ante. Curabitur augue orci, iaculis nec congue   sollicitudin, varius eget est. Etiam pellentesque at eros eget   tincidunt. Proin vel metus sit amet lectus ultricies fermentum. Nulla   facilisi. Quisque ac viverra justo. </p>
+  </section>
+</div>
+</body>
+</html>

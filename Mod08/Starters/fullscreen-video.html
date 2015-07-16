@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fullscreen API</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+	font-size: 100%;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+button {
+	background: #339900;
+	border: 2px solid #000000;
+	font-weight: 700;
+	font-size: 1em;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFF;
+}
+video {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <video id="vid1" controls>
+    <source src="whales.m4v" type="video/mp4" />
+    <source src="whales.ogv" type="video/ogg" />
+    Your browser does not support the video element.</video>
+  <p>
+    <button id="fsButton">Launch Fullscreen</button>
+  </p>
+</div>
+</body>
+</html>

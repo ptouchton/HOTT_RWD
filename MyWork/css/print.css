@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: #FFF;
+	background-image: none;
+}
+.container {
+	width: 90%;
+}
+nav, #nav, #slideshow, .slides {
+	display: none;
+	visibility: hidden;
+}
+.box {
+	width:95%;
+	clear: both;
+}

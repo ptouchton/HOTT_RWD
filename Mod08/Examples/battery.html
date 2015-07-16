@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Battery API</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/battery.css" rel="stylesheet">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+"use strict";
+var battery;
+$(document).ready(function(){
+	
+	battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery || navigator.msBattery || null;
+
+	if (battery) {
+	    window.onload = showMessage; 
+	    battery.onlevelchange = showMessage; 
+	    battery.onchargingchange = showMessage;
+	}
+});
+
+function showMessage(){
+    var $meter = $('meter');
+    var $status = $('#status');
+	$meter.val(battery.level);
+    $meter.text(Math.floor((battery.level * 100) + '%'));
+        
+    var charge;
+    if (battery.charging) {
+    	charge = 'Charging: Fully Charged in ' + battery.chargingTime;
+    }
+    else {
+    	charge = 'Discharging: Time Remaining ' + battery.dischargingTime;
+    }
+    $status.text(charge + ' seconds');
+}
+</script>
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>Battery API</h1>
+  <p>
+    <meter min="0" max="1" low="0.3" high="0.5" optimum="0.7" value="0.5">50%</meter>
+  </p>
+  <p id="status">undetermined status</p>
+</div>
+</body>
+</html>

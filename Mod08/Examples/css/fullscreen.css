@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+body {
+	background: url(../images/bg.jpg) repeat;
+	font-size: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+	background:#FFF;
+	padding:5px;
+}
+figure {
+	position: relative;
+	display: block;
+	width: 20%;
+	float: right;
+	cursor: pointer;
+}
+figure img {
+	display: block;
+	max-width: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+figure:fullscreen img {
+ position: fixed;
+}
+figure:-moz-full-screen img {
+ position: fixed;
+}
+figure:-ms-fullscreen {
+ width: auto;
+}
+figure:-ms-fullscreen img {
+ position: fixed;
+}
+h1 {
+	font-size: 1.25em;
+	color: #2c567d;
+}
+p {
+	font-size: .875em;
+}

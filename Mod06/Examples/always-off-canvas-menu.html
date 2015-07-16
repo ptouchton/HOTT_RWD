@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Always Off Canvas Menu</title>
+<style>
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-size: 100%;
+}
+#container {
+	width: 80%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+@font-face {
+	font-family: exosemibold;
+	src: url(fonts/exo-semibold-webfont.eot);
+	src: url(fonts/exo-semibold-webfont.eot?#iefix) format('embedded-opentype'), url(fonts/exo-semibold-webfont.woff) format('woff'), url(fonts/exo-semibold-webfont.ttf) format('truetype'), url(fonts/exo-semibold-webfont.svg#exodemibold) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+.toggle {
+	position: absolute;
+	top: 15px;
+	left: -50px;
+	height: 40px;
+	width: 40px;
+	background: #C00 url(images/menu.svg) no-repeat;
+	background-position: center center;
+	background-size: 70%;
+	z-index: 99;
+	-webkit-transition: opacity 0.15s ease;
+	-moz-transition: opacity 0.15s ease;
+	-o-transition: opacity 0.15s ease;
+	transition: opacity 0.15s ease;
+}
+#nav {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 220px;
+	height: 100%;
+	background: #06C;
+	z-index: 999;
+	-webkit-transform: translate(0px, 0px);
+	-moz-transform: translate(0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+	-webkit-transition: 0.15s ease;
+	-moz-transition: 0.15s ease;
+	-o-transition: 0.15s ease;
+	transition: 0.15s ease;
+	right: -220px;
+}
+#nav.active {
+	-webkit-transform: translate(-220px, 0px);
+	-moz-transform: translate(-220px, 0px);
+	-o-transform: translate(-220px, 0px);
+	-ms-transform: translate(-220px, 0px);
+	transform: translate(-220px, 0px);
+}
+nav ul {
+	background: #06C;
+	padding-left: 20px;
+	list-style: none;
+}
+nav ul li {
+	margin: 25px 0;
+}
+nav ul li a {
+	color: #FFF;
+	font-family: exosemibold;
+	text-decoration: none;
+}
+nav ul li a:hover {
+	color: #FF6;
+}
+#main {
+	-webkit-transform: translate(0px, 0px);
+	-moz-transform: translate(0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+	-webkit-transition: 0.15s ease;
+	-moz-transition: 0.15s ease;
+	-o-transition: 0.15s ease;
+	transition: 0.15s ease;
+}
+#main.active {
+	-webkit-transform: translate(-220px, 0px);
+	-moz-transform: translate(-220px, 0px);
+	-o-transform: translate(-220px, 0px);
+	-ms-transform: translate(-220px, 0px);
+	transform: translate(-220px, 0px);
+}
+</style>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function() {
+  $(".toggle").click(function(){
+    $("#nav").toggleClass("active");
+    $("#main").toggleClass("active");
+  });
+});
+</script>
+</head>
+<body>
+<div id="container">
+  <nav id="nav"> <a href="#nav" class="toggle"></a>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Directions</a></li>
+    </ul>
+  </nav>
+  <section id="main" role="main">
+    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ante   metus, condimentum quis metus vel, posuere condimentum neque. Duis eu   pharetra nisi, at porttitor felis. Sed varius ac mi ac adipiscing. Cras   id semper orci. Etiam a purus eu est adipiscing porta ut vitae eros.   Nulla id turpis dictum, fringilla leo eu, adipiscing urna. Nam dignissim   fermentum gravida. Suspendisse potenti. Aenean scelerisque arcu non est   imperdiet, non vestibulum nunc fermentum. Phasellus at elementum neque.   Duis non dui vel dui pharetra tempus. Etiam congue auctor facilisis.   Praesent tempor nisl nec augue posuere facilisis. Sed accumsan felis vel   nibh sagittis, in dignissim est tempor. Phasellus ullamcorper arcu ac   est egestas, ac interdum libero ornare. </p>
+    <p> Nullam non risus nisl. Maecenas purus mauris, aliquam vel turpis nec,   eleifend convallis nibh. Maecenas massa enim, pulvinar sit amet volutpat   eu, pretium id nunc. Pellentesque pellentesque augue nunc, in fringilla   dui euismod imperdiet. Praesent massa massa, tincidunt quis ipsum at,   vestibulum venenatis velit. Proin lobortis auctor tortor, id varius mi   tempus fringilla. Sed accumsan lectus at ullamcorper scelerisque. Cras   sagittis egestas tristique. Pellentesque ornare vulputate ante in   volutpat. Nam mollis condimentum nisl nec adipiscing. Etiam sed suscipit   nisi, a pellentesque ante. Curabitur augue orci, iaculis nec congue   sollicitudin, varius eget est. Etiam pellentesque at eros eget   tincidunt. Proin vel metus sit amet lectus ultricies fermentum. Nulla   facilisi. Quisque ac viverra justo. </p>
+  </section>
+</div>
+</body>
+</html>

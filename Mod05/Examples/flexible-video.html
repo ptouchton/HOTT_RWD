@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexible Video</title>
+<style>
+#videoplayer {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+video {
+	max-width: 100%;
+	height: auto;
+}
+#video1 {
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 2px solid #CCC;
+}
+button {
+	background-color: #FF8400;
+	border: 2px solid #BE6200;
+	font-weight: 700;
+	font-size: 11px;
+	color: #FFF;
+}
+</style>
+<script>
+var video1;
+window.onload = function () {
+    video1 = document.getElementById("video1");
+
+    btnPlayMovie = document.getElementById('btnPlayVideo');
+    btnPauseMovie = document.getElementById('btnPauseVideo');
+    btnStopMovie = document.getElementById('btnStopVideo');
+
+    btnPlayMovie.onclick = PlayVideo;
+    btnPauseMovie.onclick = PauseVideo;
+    btnStopMovie.onclick = StopVideo;
+}
+
+function PlayVideo() {
+    video1.play();
+}
+
+function PauseVideo() {
+    video1.pause();
+}
+
+function StopVideo() {
+    video1.pause();
+    video1.currentTime = 0;
+}
+</script>
+</head>
+<body>
+<div id="videoplayer">
+  <video id="video1">
+    <source src="movie-tree.mp4" type="video/mp4" />
+    <source src="movie-tree.ogv" type="video/ogg" />
+    Your browser does not support the video element. </video>
+  <p>
+    <button id="btnPlayVideo">Play</button>
+    <button id="btnPauseVideo">Pause</button>
+    <button id="btnStopVideo">Stop</button>
+  </p>
+</div>
+</body>
+</html>

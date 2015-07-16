@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Tables Using CSS</title>
+<style>
+body {
+	font-size: 100%;
+}
+#footable {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: .75em;
+}
+#footable th {
+	background-color: #016299;
+	color: #FFF;
+}
+tr:nth-child(even) {
+	background-color: #DAE5EB;
+}
+#footable td, #footable th {
+	padding: 5px;
+	border: 1px solid #CCC;
+	text-align: left;
+}
+</style>
+<link href="css/footable.core.css" rel="stylesheet">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/footable.js"></script>
+<script>
+$(document).ready(function () {
+  $('#footable').footable();
+});
+</script>
+</head>
+<body>
+<table id="footable" data-filter="#filter">
+<thead>
+  <tr data-toggle="true">
+    <th data-sort-initial="descending" data-class="expand">First Name</th>
+    <th data-sort-ignore="true">Last Name</th>
+    <th data-hide="phone,tablet">City</th>
+    <th data-hide="phone,tablet">State</th>
+    <th data-hide="phone,tablet">Zip</th>
+    <th data-hide="phone,tablet">E-mail</th>
+    <th data-hide="phone,tablet">Phone</th>
+  </tr>
+  </thead>
+  <tr>
+    <td>John</td>
+    <td>Smith</td>
+    <td>Portsmouth</td>
+    <td>NH</td>
+    <td>03801</td>
+    <td>johnsmith@gmail.com</td>
+    <td>603-555-5555</td>
+  </tr>
+  <tr>
+    <td>Bill</td>
+    <td>Harris</td>
+    <td>Manchester</td>
+    <td>NH</td>
+    <td>03104</td>
+    <td>billharris@gmail.com</td>
+    <td>603-555-5555</td>
+  </tr>
+  <tr>
+    <td>James</td>
+    <td>Martin</td>
+    <td>Boston</td>
+    <td>MA</td>
+    <td>02201</td>
+    <td>jamesmartin@gmail.com</td>
+    <td>978-555-5555</td>
+  </tr>
+  <tr>
+    <td>Paul </td>
+    <td>Jones</td>
+    <td>Springfield</td>
+    <td>MA</td>
+    <td>01111</td>
+    <td>pauljones@gmail.com</td>
+    <td>978-555-5555</td>
+  </tr>
+  <tr>
+    <td>Donald</td>
+    <td>Miller</td>
+    <td>Exeter</td>
+    <td>NH</td>
+    <td>03833</td>
+    <td>davidmiller@gmail.com</td>
+    <td>603-555-5555</td>
+  </tr>
+</table>
+</body>
+</html>

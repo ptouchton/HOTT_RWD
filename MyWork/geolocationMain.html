@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Geolocation API</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	background-color:#131f69;
+}
+h1 {
+	font-size: 1em;
+	padding:5px;
+}
+p {
+	font-size: .875em;
+	padding:5px;
+}
+.container {
+	padding: 5px;
+	background: #f4f4ec;
+	overflow: auto;
+	clear: both;
+	width: 100%
+	}
+#location, #distance {
+	padding: 5px;
+}
+#map {
+	width: 100%;
+	height: 100%;
+    border: 2px solid black;
+	
+}
+.box {
+	width: 30%;
+	height: 200px;
+	float: left;
+	margin: 10px;
+	background: #e6e4cd;
+	box-shadow: inset 0 0 5px 5px #d4d1aa;
+	-webkit-box-shadow: inset 0 0 5px 5px #d4d1aa;
+	padding: 5px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	behavior: url(PIE.htc);
+}
+
+@media screen and (min-width:150px) and (max-width:480px){
+	.box {
+	float: none;
+	clear: both;
+	width: auto;
+}
+
+}
+</style>
+<script src="http://maps.google.com/maps/api/js?=sensor=true"></script>
+<script src="js/geolocation.js"></script>
+<script src="js/modernizr-latest.js"></script>
+</head>
+<body>
+<div class="container">
+  <h1>Share your location to find the best seafood in New England</h1>
+
+  	<div id="location"></div>
+  	<div id="distance"></div>
+  	<div class="box">
+  		<div id="map"></div>  	
+  	</div>
+  	<div class="box">
+      <h1>Specials/Packages</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* CSS Document */
+
+#slideshow {
+	width: 100%;
+	margin-top: 5px;
+	float:left;
+}
+#slideshow .slides {
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+#slideshow ul {
+	margin: 0;
+	padding: 0;
+}
+#slideshow .slides li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+#slideshow .slides li img {
+	display: block;
+	width: 100%;
+	max-width: none;
+}
+#slideshow .slides li.active {
+	display: block;
+	position: relative;
+}
+#slideshow .crop li img {
+	width: auto;
+}
+#slideshow .pager {
+	height: 40px;
+	text-align: center;
+}
+#slideshow .pager li {
+	display: inline-block;
+}
+#slideshow .pager li a, #slideshow .pager li a span {
+	display: block;
+	height: 10px;
+	width: 10px;
+}
+#slideshow .pager li a {
+	padding: 18px 8px;
+}
+#slideshow .pager li a span {
+	overflow: hidden;
+	background: #c0c0c0;
+	text-indent: -9999px;
+}
+#slideshow .pager li.active a span {
+	background: #000;
+}

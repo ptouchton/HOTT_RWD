@@ -1,0 +1,5 @@
+ <div id="topleft"><img src="images/logo.png" alt="Bear Mountain Bed and Breakfast" /></div>
+    <div id="topright">
+      <p id="telnumber">Contact Bear Mountain: (800) 555-5555</p>
+      <p id="social"></p>
+    </div>

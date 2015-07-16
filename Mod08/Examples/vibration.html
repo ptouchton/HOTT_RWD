@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vibration API</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/vibration.css" rel="stylesheet">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+	var $vibSupported = $('#isSupported');
+	if (navigator.vibrate) {
+	    $vibSupported.text('Yes');
+		$('#vibrateOnce').on('click', function () {
+	        navigator.vibrate(1000);
+        });
+        $('#vibrateMultiple').on('click', function () {
+	        navigator.vibrate([1000, 1000, 2000, 1000, 5000]);
+        });
+    }
+    else {
+    	$vibSupported.text('No');
+    }
+});
+</script>
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <h1>Vibration API</h1>
+   <p><strong>Is the Vibration API supported?: <span id="supported"></span></strong></p>
+   <p><input id="vibrateOnce" type="button" value="Vibrate One Time" /> <input id="vibrateMultiple" type="button" value="Vibrate Multiple Times" />
+   </p>
+</div>
+</body>
+</html>

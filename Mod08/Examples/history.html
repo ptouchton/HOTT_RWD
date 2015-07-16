@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>History API</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/history.css" rel="stylesheet">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function () {
+
+	var historySupported = Boolean(window.history && history.pushState);
+
+	function changeImage(href) {
+	
+	var url = 'photogallery/' + href.split('/').pop();
+
+	$.get(url, function(data){
+
+		$('#gallery').html(data);
+		return true;
+	});
+	return false;
+		
+	}
+
+  		if (!historySupported ) {
+  			return;
+  		}
+  		$('#gallery').on('click', '#showNext, #showPrev', function(e){
+		
+			e.preventDefault();
+		
+  			if(changeImage(this.href))
+  			{
+  				history.pushState(null, null, this.href);
+  			
+  			}
+  		});
+  		
+  		window.setTimeout(function() {
+    		window.addEventListener('popstate', function(e) {
+			
+      			changeImage(location.pathname);
+    		}, false);
+  		}, 1);
+});
+</script>
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <div id="gallery">
+    <p class="photonav"><a id="showPrev" href="portsmouth.html">&laquo; Previous</a> <a id="showNext" href="faneuil.html">Next &raquo;</a></p>
+    <figure id="photo"><img id="photoimg" src="photogallery/copley-square.jpg" alt="Copley Square" width="425" height="280">
+      <figcaption>Copley Square</figcaption>
+    </figure>
+  </div>
+  <h1>History API</h1>
+  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque   luctus dolor sit amet turpis egestas dignissim. Proin pharetra accumsan   dui in ornare. Fusce porta, lorem sollicitudin vestibulum sollicitudin,   magna neque ullamcorper libero, nec sagittis arcu eros ut turpis. Nunc   et nisi nisi. Pellentesque in risus volutpat, sagittis mi a, congue mi.   Sed nec condimentum turpis. Cras ullamcorper pretium lectus. Etiam   consectetur eget lacus sit amet tristique. Ut elementum tortor dolor, eu   pharetra lacus aliquet et. Curabitur sollicitudin tincidunt nulla, nec   ultrices nibh venenatis in. </p>
+  <p> Proin mi mi, cursus ut massa ullamcorper, pulvinar condimentum diam.   Maecenas consequat feugiat suscipit. Suspendisse vel ipsum id leo semper   pulvinar. Morbi at pharetra erat. Pellentesque feugiat dapibus erat,   molestie tempor eros varius sed. Aliquam in faucibus lectus. Duis   ultrices vehicula neque, vel dapibus arcu viverra in. Proin scelerisque   gravida tellus, nec euismod magna pulvinar nec. In bibendum, dui sed   blandit euismod, diam nulla rutrum orci, at semper enim felis non massa.   Donec eget odio ullamcorper, vestibulum purus vel, varius lorem. Cras   adipiscing mi eu aliquam laoreet. Phasellus aliquet imperdiet mattis. </p>
+  <p> Donec sollicitudin eros eu diam posuere varius. Suspendisse aliquet   mauris at leo rhoncus imperdiet. Curabitur vel consequat enim. Quisque   pharetra dolor pellentesque interdum euismod. Curabitur non leo   faucibus, hendrerit dolor quis, rhoncus purus. Vivamus sollicitudin eget   purus sed interdum. Fusce imperdiet pharetra lorem, nec dignissim augue   viverra at. Proin dignissim blandit massa eget laoreet. Morbi semper   cursus gravida. Vivamus a faucibus est, ac faucibus ipsum. In in posuere   nisi, id ornare dolor. Phasellus lorem elit, volutpat eget leo eget,   porttitor tempor risus. Suspendisse potenti. Integer sagittis feugiat   convallis. Mauris mi purus, congue quis enim in, faucibus tempus mi. </p>
+</div>
+</body>
+</html>

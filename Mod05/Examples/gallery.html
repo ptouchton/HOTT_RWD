@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Image Gallery</title>
+<style>
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-size: 100%;
+	font-family:Verdana, Geneva, sans-serif;
+	background:url(images/bg.jpg) repeat;
+}
+.container {
+	width: 80%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+p {
+	font-size:.813em;
+}
+h2 {
+	font-size:1em;
+}
+ul.gallery {
+	list-style: none;
+	padding:0;
+}
+ul.gallery li {
+	display: inline-block;
+	padding: 10px;
+	margin: 0 0 2.5% 2.5%;
+	background: #FFF;
+	width: 22%;
+}
+ul.gallery li img {
+	max-width: 100%;
+	height: auto;
+	border:2px solid #FFF;
+	box-shadow: 0 0 2px 1px #CCC;
+	-webkit-box-shadow: 0 0 2px 1px #CCC;
+	display:block;
+	margin:auto;
+}
+@media screen and (max-width: 480px) {
+body {
+	font-size: 80%;
+}
+ul.gallery li {
+	width: 100% !important;
+	margin: 0 0 5% 0;
+}
+} @media screen and (max-width: 800px) {
+body {
+	font-size: 80%;
+}
+ul.gallery li {
+	width: 30%;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <ul class="gallery">
+    <li> <a href="#"><img src="images/img1.jpg" alt="" /></a>
+      <h2>Image 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing.</p>
+    </li>
+    <li> <a href="#"><img src="images/img2.jpg" alt="" /></a>
+      <h2>Image 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing.</p>
+    </li>
+    <li> <a href="#"><img src="images/img3.jpg" alt="" /></a>
+      <h2>Image 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing.</p>
+    </li>
+    <li> <a href="#"><img src="images/img4.jpg" alt="" /></a>
+      <h2>Image 4</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing.</p>
+    </li>
+    <li> <a href="#"><img src="images/img5.jpg" alt="" /></a>
+      <h2>Image 5</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing.</p>
+    </li>
+    <li> <a href="#"><img src="images/img6.jpg" alt="" /></a>
+      <h2>Image 6</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing.</p>
+    </li>
+    <li> <a href="#"><img src="images/img7.jpg" alt="" /></a>
+      <h2>Image 7</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing.</p>
+    </li>
+    <li> <a href="#"><img src="images/img8.jpg" alt="" /></a>
+      <h2>Image 8</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod ultrices ante, ac laoreet nulla vestibulum adipiscing.</p>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

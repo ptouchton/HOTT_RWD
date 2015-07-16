@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Form Example</title>
+<style>
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
+}
+body {
+	font-size: 100%;
+	font-family:Verdana, Geneva, sans-serif;
+}
+.container {
+	width: 80%;
+	margin: 0px auto;
+	overflow: hidden;
+}
+p {
+	font-size:.875em;
+}
+label {
+	width:40%;
+	font-weight:700;
+	float:left;
+	text-align:left;
+	clear:both;
+	margin:0;
+	padding:0;
+}
+input, textarea {
+	width:60%;
+	border:1px solid #183319;
+	background-color:#FFF;
+	padding:3px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	color: #9c9c9c;
+	behavior: url(PIE.htc);
+}
+input:focus {
+	box-shadow: 0px 0px 5px #999;
+}
+fieldset {
+	width:100%;
+	background-color:#ceecb1;
+	padding:20px;
+	margin:0 0 20px;
+	border:1px solid #EEE;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	behavior: url(PIE.htc);
+}
+legend {
+	padding:7px 10px;
+	background-color:#183319;
+	color:#FFF;
+	font-weight:700;
+	font-size:1em;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	margin-bottom:0;
+	behavior: url(PIE.htc);
+}
+sup {
+	color: #C00;
+}
+.btn {
+	width:auto;
+	background-color:#8cdaf9;
+	font-weight: 700;
+	color:#1785b1;
+	border: solid 1px #1785b1;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.5);
+	text-shadow: 1px 1px 1px #FFF;
+	behavior: url(PIE.htc);
+}
+</style>
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="container">
+  <form action="#" method="post" id="frmContact">
+    <fieldset id="fsUser">
+      <legend>Contact Details</legend>
+      <p>
+        <label for="txtName">Name: <sup>*</sup></label>
+        <input type="text" placeholder="Name" autofocus required id="txtName" />
+      </p>
+      <p>
+        <label for="txtEmail">E-mail: <sup>*</sup></label>
+        <input type="email" placeholder="anything@example.com" id="txtEmail" required />
+      </p>
+      <p>
+        <label for="txtPhone">Phone:</label>
+        <input type="tel" placeholder="555-555-5555" required pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$" id="txtPhone" />
+      </p>
+      <p>
+        <label for="txtFind">How did you find us?</label>
+        <input id="txtFind" list="findus" type="text" />
+        <datalist id="findus">
+          <option value="Google">
+          <option value="Yahoo">
+          <option value="Bing">
+          <option value="Other"> 
+        </datalist>
+      </p>
+    </fieldset>
+    <fieldset id="fsMessage">
+      <legend>Your Comments</legend>
+      <p>
+        <label for="txtComments">Comments:<sup>*</sup></label>
+        <textarea id="txtComments" required></textarea>
+      </p>
+    </fieldset>
+    <input type="submit" id="btnSubmit" value="Submit" class="btn" />
+    <input type="reset" id="btnReset" value="Reset" class="btn" />
+  </form>
+</div>
+</body>
+</html>

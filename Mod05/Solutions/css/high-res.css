@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section {
+	display: block;
+}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	background-color:#131f69;
+	background-image: url(../images/clouds-lo.jpg);
+	background-size: cover;
+	background-position: bottom;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+	float:right;
+	margin-left:10px;
+}
+h1 {
+	font-size: 1em;
+	padding:5px;
+}
+p {
+	font-size: .875em;
+	padding:5px;
+}
+.container {
+	width: 80%;
+	background: #FFF;
+	margin: 0 auto;
+}
+/* MEDIA QUERIES */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+body {
+	background-image: url(../images/clouds-high.jpg);
+}
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Multi-Column Form</title>
+<style>
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	font-size: 100%;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+h1 {
+	font-size: 1.25em;
+	font-weight: 700;
+	color: #FFF;
+	padding:5px;
+	margin:0;
+	background-color: #465439;
+}
+form {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: .775em;
+}
+label {
+	width: 30%;
+	font-weight: 700;
+	float: left;
+	text-align: left;
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+input, textarea {
+	border: 1px solid #D2D2D2;
+	background-color: #FFF;
+	padding: 3px;
+	color: #000;
+	width: 70%;
+}
+.btn {
+	background: #536e3b;
+	font-weight: 700;
+	color: #FFF;
+	border: 1px solid #465439;
+	width: 75px;
+}
+.wrapper {
+	background:#F0F0F0;
+	overflow:auto;
+}
+.col {
+	float:left;
+	width: 50%;
+	background:#F0F0F0;
+	padding: 10px;
+}
+.full {
+	width:100%;
+	clear:both;
+	text-align:center;
+}
+@media screen and (max-width: 480px) {
+.col {
+	float:left;
+	width: 100%;
+	clear:both;
+}
+}
+@media screen and (max-width: 640px) {
+form {
+	font-size: .675em;
+}
+label {
+	width: 40%;
+}
+input, textarea {
+	width: 60%;
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <form>
+    <div class="wrapper">
+      <div class="col">
+        <h1>Contact Details</h1>
+        <p>
+          <label for="txtName"><strong>Name:</strong></label>
+          <input type="text" id="txtName" />
+        </p>
+        <p>
+          <label for="txtAddress"><strong>Address:</strong></label>
+          <input type="text" id="txtAddress" />
+        </p>
+        <p>
+          <label for="txtCity"><strong>City:</strong></label>
+          <input type="text" id="txtCity" />
+        </p>
+        <p>
+          <label for="txtState"><strong>State:</strong></label>
+          <input type="text"id="txtState" />
+        </p>
+        <p>
+          <label for="txtZip"><strong>Zip Code:</strong></label>
+          <input type="text" id="txtZip" />
+        </p>
+        <p>
+          <label for="txtPhone"><strong>Phone:</strong></label>
+          <input type="text" placeholder="555-555-5555" pattern="^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$" id="txtPhone" />
+        </p>
+        <p>
+          <label for="txtEmail"><strong>E-mail: </strong></label>
+          <input type="email" placeholder="anything@example.com" id="txtEmail" />
+        </p>
+      </div>
+      <div class="col">
+        <h1>Your Information</h1>
+        <p>
+          <label for="txtAge"><strong>Age:</strong></label>
+          <input type="text" id="txtAge" />
+        </p>
+        <p>
+          <label for="txtOccupation"><strong>Occupation:</strong></label>
+          <input type="text" id="txtOccupation" />
+        </p>
+        <p>
+          <label for="txtEducation"><strong>Education:</strong></label>
+          <input type="text" id="txtEducation" />
+        </p>
+        <p>
+          <label for="txtUsername"><strong>Username:</strong></label>
+          <input type="text" id="txtUsername" />
+        </p>
+        <p>
+          <label for="txtPassword"><strong>Password:</strong></label>
+          <input type="text" id="txtPassword" />
+        </p>
+      </div>
+    </div>
+    <div class="full">
+      <p>
+        <input type="submit" id="btnSubmit" class="btn" value="Submit"  />
+        <input type="submit" id="btnSubmit" class="btn" value="Reset" />
+      </p>
+    </div>
+  </form>
+</div>
+</body>
+</html>

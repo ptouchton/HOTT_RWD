@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Tables Using Scrollbars</title>
+<style>
+body {
+	font-size: 100%;
+}
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#contacts {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:.75em
+}
+#contacts th {
+	background-color: #016299;
+	color: #FFF;
+}
+tr:nth-child(even) {
+	background-color: #DAE5EB;
+}
+#contacts td, #contacts th {
+	padding: 5px;
+	border: 1px solid #CCC;
+	text-align: left;
+}
+/* Media Queries */
+ @media screen and (max-width: 640px) {
+#contacts .th:after {
+	visibility: hidden;
+	display: block;
+	content: " ";
+	clear: both;
+}
+#contacts {
+	display: block;
+	position: relative;
+}
+#contacts thead {
+	display: block;
+	float: left;
+}
+#contacts thead tr {
+	display: block;
+}
+#contacts tbody {
+	display: block;
+	width: auto;
+	position: relative;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+#contacts tbody tr {
+	display: inline-block;
+}
+#contacts th, td {
+	display: block;
+}
+}
+</style>
+</head>
+<body>
+  <table id="contacts">
+    <thead class="th">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th class="scroll">City</th>
+        <th class="scroll">State</th>
+        <th class="scroll">Zip</th>
+        <th class="scroll">E-mail</th>
+        <th class="scroll">Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Smith</td>
+        <td class="scroll">Portsmouth</td>
+        <td class="scroll">NH</td>
+        <td class="scroll">03801</td>
+        <td class="scroll">johnsmith@gmail.com</td>
+        <td class="scroll">603-555-5555</td>
+      </tr>
+      <tr>
+        <td>Bill</td>
+        <td>Harris</td>
+        <td class="scroll">Manchester</td>
+        <td class="scroll">NH</td>
+        <td class="scroll">03104</td>
+        <td class="scroll">billharris@gmail.com</td>
+        <td class="scroll">603-555-5555</td>
+      </tr>
+      <tr>
+        <td>James</td>
+        <td>Martin</td>
+        <td class="scroll">Boston</td>
+        <td class="scroll">MA</td>
+        <td class="scroll">02201</td>
+        <td class="scroll">jamesmartin@gmail.com</td>
+        <td class="scroll">978-555-5555</td>
+      </tr>
+      <tr>
+        <td>Paul </td>
+        <td>Jones</td>
+        <td class="scroll">Springfield</td>
+        <td class="scroll">MA</td>
+        <td class="scroll">01111</td>
+        <td class="scroll">pauljones@gmail.com</td>
+        <td class="scroll">978-555-5555</td>
+      </tr>
+      <tr>
+        <td>Donald</td>
+        <td>Miller</td>
+        <td class="scroll">Exeter</td>
+        <td class="scroll">NH</td>
+        <td class="scroll">03833</td>
+        <td class="scroll">davidmiller@gmail.com</td>
+        <td class="scroll">603-555-5555</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

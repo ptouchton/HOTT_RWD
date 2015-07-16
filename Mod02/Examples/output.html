@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>&lt;output&gt;</title>
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<form onsubmit="return false" oninput="outResult.value = parseInt(txtA.value) + parseInt(txtB.value)">
+  <input id="txtA" type="number" step="any">
+  +
+  <input id="txtB" type="number" step="any">
+  =
+  <output id="outResult" value="0"></output>
+</form>
+</body>
+</html>
